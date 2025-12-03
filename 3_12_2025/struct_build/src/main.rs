@@ -349,28 +349,175 @@
 // }
 
 // ---------------------- 14 ----------------------
-enum Status{
-    Pass,
-    reje
-}
+// enum Status{
+//     Pass,
+//     reje
+// }
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+
+// fn main(){
+//     let l= Loan::new(33,Status::Pass);
+//     match l.status{
+//         Status::Pass=>println!("pass {}",l.acc),
+//         Status::reje=>println!("reje {}",l.acc),
+//     }
+// }
+
+// -------------------------- 15 ---------------------------
+// enum Status{
+//     Pass,
+//     reje
+// }
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+// fn main(){
+//     let l=Loan::new(32,Status::reje);
+//     match l.status{
+//         Status::Pass=>println!("pass {}",l.acc),
+//         Status::reje=>println!("reje {}",l.acc),
+//     }
+// }
+// -------------------------- 16 ---------------------------
+// enum Status{
+//     Pass,
+//     reje
+// }
+
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+
+// fn main(){
+//     let l=Loan::new(32,Status::Pass);
+//     match l.status{
+//         Status::Pass=>println!("pass {}",l.acc),
+//          Status::reje=>println!("reje {}",l.acc),
+//     }
+// }
+// -------------------------- 17 ---------------------------
+// enum Status{
+//     Pass,
+//     reje
+// }
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+
+// fn main(){
+//     let l=Loan::new(20,Status::reje);
+//     match l.status{
+//         Status::Pass=>println!("pass {}",l.acc),
+//         Status::reje=>println!("reje {}",l.acc)
+//     }
+// }
+
+// -------------------------- 18 ---------------------------
+// enum Status{
+//     Pass,
+//     reje
+// }
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+// fn main(){
+//     let l=Loan::new(32,Status::Pass);
+//     match l.status{
+//         Status::Pass=>println!("pass " ),
+//         Status::reje=>println!("reje ")
+// }}
+
+// // -------------------------- 19 ---------------------------
+// enum Status{
+//     Pass,
+//     reje
+// }
+// struct Loan{
+//     acc:u32,
+//     status:Status
+// }
+// impl Loan{
+//     fn new(a:u32,s:Status)->Self{
+//         Self{
+//             acc:a,
+//             status:s
+//         }
+//     }
+// }
+
+// fn main(){
+//     let l= Loan::new(32,Status::reje);
+//     match l.status{
+//         Status::Pass=>println!("pass {}",l.acc),
+//         Status::reje=>println!("reje {}",l.acc),
+
+//     }
+// }
+// -------------------------- 20 ---------------------------
+
 struct Loan{
     acc:u32,
-    status:Status
+    
 }
-
 impl Loan{
-    fn new(a:u32,s:Status)->Self{
+    fn new(a:u32)->Self{
         Self{
-            acc:a,
-            status:s
+            acc:a
         }
     }
 }
 
 fn main(){
-    let l= Loan::new(33,Status::Pass);
-    match l.status{
-        Status::Pass=>println!("pass {}",l.acc),
-        Status::reje=>println!("reje {}",l.acc),
-    }
+    let l= Loan::new(66);
+    println!("accout {}",l.acc)
 }
