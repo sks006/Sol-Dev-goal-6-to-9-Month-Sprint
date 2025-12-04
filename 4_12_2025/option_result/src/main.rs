@@ -71,8 +71,8 @@
 //     }
 // }
 
-use core::error;
-use std::{collections::btree_map::Values, result};
+// use core::error;
+// use std::{collections::btree_map::Values, result};
 
 // fn main(){
 //     let l=divide(33,0);
@@ -224,17 +224,240 @@ use std::{collections::btree_map::Values, result};
 //----------------------- 15 ----------------------------------
 
 
-fn divide(a:f32,b:f32)->Result<f32,String>{
-    if b==0.0 {
-        Err("this is the end".to_string())
-    }else {
-        Ok(a/b)
-    }
+// fn divide(a:f32,b:f32)->Result<f32,String>{
+//     if b==0.0 {
+//         Err("this is the end".to_string())
+//     }else {
+//         Ok(a/b)
+//     }
+// }
+// fn main(){
+//     let x=divide(34.4, 2.3);
+//     match x {
+//              Ok(values)=>println!("values {}",values),
+//         Err(error)=>println!("error {}",error)   
+//     }
+// }
+
+//---------------------- Options -----------------------------------------
+
+
+// The core data structure
+// #[derive(Debug, Clone)]
+// struct PerpPosition {
+//     pub size: u64, // Position quantity
+//      // Price scaled (e.g., $30,000 * 100)
+// }
+
+// fn main() {
+//     // 1. Position with value (Some)
+//     let position_a: Option<PerpPosition> = Some(PerpPosition {
+//         size: 2_500,
+        
+//     });
+
+//     // 2. Position without value (None)
+//     let position_b: Option<PerpPosition> = None;
+
+//     println!("--- 1. Rule: Transformation (map) ---");
+//     // Practice Point #6: map()
+//     // Rule: Apply a function to the inner value IF Some, otherwise remain None.
+    
+//     // Convert Option<PerpPosition> into Option<u64> containing only the size.
+//     let size_a: Option<u64> = position_a.map(|pos| {
+//         println!("  Mapping: Extracting size from Some(T)...");
+//         pos.size // The function returns the size
+//     });
+    
+//     let size_b: Option<u64> = position_b.map(|pos| pos.size); // The function is NOT run here
+
+//     println!("Size A result (Some): {:?}", size_a); // Output: Some(2500)
+//     println!("Size B result (None): {:?}\n", size_b); // Output: None
+
+// }
+
+//---------------------- 2 ----------------------------------
+
+// #[derive(Debug,Clone)]
+
+// struct PerpPosition{
+//      pub size: u64, 
+// }
+// fn main(){
+//     let position_a:Option<PerpPosition>=Some(
+//         PerpPosition { size: 2_400 }
+//     );
+//     let position_b:Option<PerpPosition>=None;
+//     println!("--- 1. Rule: Transformation (map) ---");
+//     let size_a: Option<u64>= position_a.map(|pos|{
+//         println!("  Mapping: Extracting size from Some(T)...");
+//         pos.size
+//     });
+//     let size_b: Option<u64> = position_b.map(|pos| pos.size);
+//     println!("Size A {:?}",size_a);
+//     println!("Size B {:?}",size_b)
+// }
+
+//---------------------- 3 ----------------------------------
+
+
+// // The data structure (e.g., a margin/collateral record)
+// #[derive(Debug, Clone)]
+// struct AccountCollateral {
+//      pub usd_value: u64, // Value in $1 units
+// }
+
+// fn main() {
+//     // SCENARIO A: User HAS collateral (Some(T))
+//     let collateral_record_a: Option<AccountCollateral> = Some(
+//         AccountCollateral { usd_value: 1_000_000 } // $1 million value
+//     );
+    
+//     // SCENARIO B: User HAS NO collateral (None)
+//     let collateral_record_b: Option<AccountCollateral> = None;
+
+//     println!("--- Rule: Transformation with map() ---");
+//     // map() Rule: Safely applies a function to the value *IF* it exists.
+//     // Purpose: Extracting a simpler piece of data (the value) from the complex Option struct.
+    
+//     // 1. Process SCENARIO A (Some)
+//     // The inner function runs because the value is present.
+//     let value_a: Option<u64> = collateral_record_a.map(|record| {
+//         println!("  Map Rule A: Function RUNS, extracting value...");
+//         record.usd_value // Function returns the u64 value
+//     });
+
+//     // 2. Process SCENARIO B (None)
+//     // The inner function does NOT run because the value is absent.
+//     let value_b: Option<u64> = collateral_record_b.map(|record| {
+//         // This println! will not execute.
+//         println!("  Map Rule B: Function SKIPPED. Input was None."); 
+//         record.usd_value
+//     });
+
+//     println!("\nResult A (User has collateral): {:?}", value_a); 
+//     // Output: Some(1000000). The function succeeded and returned the value.
+    
+//     println!("Result B (User has NO collateral): {:?}", value_b);
+//     // Output: None. The function was skipped, and the result remains None.
+// }
+
+//---------------------- 4 ----------------------------------
+
+// #[derive(Debug, Clone)]
+// struct AccountCollateral {
+//     pub usd_value: u64,
+// }
+
+// fn main() {
+//     let collateral_record_a: Option<AccountCollateral> = Some(
+//         AccountCollateral {
+//             usd_value: 1_000_000,
+//         }
+//     );
+    
+//     let collateral_record_b: Option<AccountCollateral> = None;
+    
+//     println!("____ Rule of Transformation with map() ____");
+    
+//     let value_a: Option<u64> = collateral_record_a.map(|record| {
+//         println!("  Map Rule A: Function RUNS, extracting value...");
+//         record.usd_value
+//     });
+    
+//     let value_b: Option<u64> = collateral_record_b.map(|record| {
+//         println!("  Map Rule B: Function SKIPPED. Input was None.");
+//         record.usd_value
+//     });
+    
+//     println!("\nResult A (User has collateral): {:?}", value_a);
+//     println!("Result B (User has NO collateral): {:?}", value_b);
+// }
+
+//----------------------------- 5 ----------------------------------
+
+
+// #[derive(Debug,Clone)]
+
+// struct AccountCollateral{
+//     pub usd_value:u64,
+// }
+
+// fn main(){
+//     let collateral_record_a:Option <AccountCollateral> = Some(
+//         AccountCollateral{
+//             usd_value:1_000_000,
+//         }
+//     );
+//     let collateral_record_b:Option <AccountCollateral> =None;
+
+
+
+//     let value_a:Option<u64>=collateral_record_a.map(|record|{
+//         println!("map A");
+//         record.usd_value
+//     });
+//     let value_b:Option<u64>=collateral_record_b.map(|record|{
+//         println!("map B");
+//         record.usd_value
+//     });
+
+
+//     println!("A result {:?}",value_a);
+//     println!("B result {:?}",value_b);
+// }
+
+//----------------------------- 6 ----------------------------------
+
+// #[derive(Debug,Clone)]
+
+// struct AccountCollateral{
+//    pub usd_value:u64,
+// }
+
+// fn main(){
+//     let collateral_record_a:Option <AccountCollateral> =Some(
+//         AccountCollateral{
+//             usd_value:1_000_000,
+//         }
+//     );
+//     let collateral_record_b:Option <AccountCollateral> = None;
+
+//     let value_a:Option<u64>=collateral_record_a.map(|record|{
+      
+//         record.usd_value
+//     });
+//     let value_b:Option<u64>=collateral_record_b.map(|record|{
+      
+//         record.usd_value
+//     });
+//     println!("A result : {:?}",value_a);
+//     println!("B result : {:?}",value_b );
+
+// }
+
+
+//----------------------------- 7 ----------------------------------
+
+#[derive(Debug,Clone)]
+struct AccountCollateral{
+    pub usd_value:u64,
 }
+
 fn main(){
-    let x=divide(34.4, 2.3);
-    match x {
-             Ok(values)=>println!("values {}",values),
-        Err(error)=>println!("error {}",error)   
-    }
+    let collateral_record_a:Option <AccountCollateral> = Some(
+        AccountCollateral{
+            usd_value:1_000_000,
+        }
+    );
+    let collateral_record_b:Option <AccountCollateral> =None;
+
+    let value_a:Option<u64> = collateral_record_a.map(|record|{
+        record.usd_value
+    });
+    let value_b:Option<u64> = collateral_record_b.map(|record|{
+        record.usd_value
+    });
+    println!("A result : {:?}",value_a);
+    println!("B result : {:?}",value_b);
 }
