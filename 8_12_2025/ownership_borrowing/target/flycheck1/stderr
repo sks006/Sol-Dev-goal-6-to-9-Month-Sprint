@@ -1,0 +1,91 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.110531515s  INFO prepare_target{force=false package_id=ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing) target="ownership_borrowing"}: cargo::core::compiler::fingerprint: fingerprint error for ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing)/Check { test: false }/TargetInner { name: "ownership_borrowing", doc: true, ..: with_path("/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing/src/main.rs", Edition2024) }
+   0.111287015s  INFO prepare_target{force=false package_id=ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing) target="ownership_borrowing"}: cargo::core::compiler::fingerprint:     err: failed to read `/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing/target/debug/.fingerprint/ownership_borrowing-af3b3fc0102fc805/bin-ownership_borrowing`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   0.150322030s  INFO prepare_target{force=false package_id=ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing) target="ownership_borrowing"}: cargo::core::compiler::fingerprint: fingerprint error for ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing)/Check { test: true }/TargetInner { name: "ownership_borrowing", doc: true, ..: with_path("/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing/src/main.rs", Edition2024) }
+   0.150349310s  INFO prepare_target{force=false package_id=ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing) target="ownership_borrowing"}: cargo::core::compiler::fingerprint:     err: failed to read `/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing/target/debug/.fingerprint/ownership_borrowing-cba07bb093d4bcbe/test-bin-ownership_borrowing`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+    Checking ownership_borrowing v0.1.0 (/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/6_12_2025/ownership_borrowing)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.84s
