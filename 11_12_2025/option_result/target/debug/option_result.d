@@ -1,0 +1,1 @@
+/media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/11_12_2025/option_result/target/debug/option_result: /media/seam/A/Rust_Solana/Prectice_project/Rust_prectice/11_12_2025/option_result/src/main.rs
