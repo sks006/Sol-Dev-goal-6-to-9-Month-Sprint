@@ -1,7 +1,12 @@
 [package]
 name = "mastered_the_entrypoint"
 version = "0.1.0"
-edition = "2024"
+edition = "2021" # 2021 is the industry standard for Solana; 2024 is also fine.
 
 [dependencies]
-solana-program = "3.0.0"
+# Using the stable Agave/Solana SDK version
+solana-program = "2.1.0" 
+
+[lib]
+# Required for Solana programs to compile to .so (shared object) files
+crate-type = ["cdylib", "lib"]
