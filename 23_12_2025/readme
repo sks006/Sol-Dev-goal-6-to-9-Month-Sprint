@@ -1,0 +1,6 @@
+# Key Changes Explained:
+Error Handling: Added proper error handling when the account isn't owned by the System Program.
+
+Lamports Access: Used lamports() method instead of accessing the field directly (though your way works too).
+
+Better Logging: Added more informative log messages.
