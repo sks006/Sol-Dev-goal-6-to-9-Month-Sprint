@@ -12,4 +12,5 @@ impl UserObligation {
     pub fn is_initialized(&self) -> bool {
         self.owner != Pubkey::default()
     }
+    
 }
