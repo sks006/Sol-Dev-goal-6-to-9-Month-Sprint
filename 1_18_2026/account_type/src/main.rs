@@ -278,5 +278,6 @@ pub struct MigrateAccount<'info> {
     pub system_program: Program<'info, System>,
 }
 fn main() {
-    println!("Hello, world!");
+    let a:u64=666;
+    println!("Hello, world! {}",a);
 }
